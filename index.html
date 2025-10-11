@@ -1,79 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Age Verification</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        text-align: center;
-    }
-    .container {
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-        max-width: 350px;
-        width: 90%;
-    }
-    h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    button {
-        background-color: #2b8a3e;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 18px;
-    }
-    button:hover {
-        background-color: #237034;
-    }
-</style>
-
-<!-- Facebook Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID'); // Replace with your Pixel ID
-    fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-/></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <!-- Open Graph Meta Tags for Rich Preview -->
+    <meta property="og:title" content="Redirecting to lemonpier.com – Exclusive Content">
+    <meta property="og:description" content="Click to explore unique content on lemonpier.com. Redirecting now...">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/redirect.html"> <!-- Replace with your page's URL -->
+    <meta property="og:image" content="Whatsapp.jpg"> <!-- Replace with your image URL, 1200x630px -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Preview image for lemonpier.com">
+    <meta property="og:site_name" content="Your Site Name">
+    <!-- End Open Graph Tags -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: none; /* Hide body to prevent flash */
+        }
+        a {
+            color: #ff0000;
+            text-decoration: underline;
+            font-size: 1.2rem;
+        }
+        #manualLink {
+            display: none;
+            margin-top: 20px;
+        }
+        #debug {
+            color: #333;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
 <body>
-<div class="container">
-    <h1>Are you 18 or older?</h1>
-    <p>You must be at least 18 years old to continue.</p>
-    <button onclick="continueToOffer()">YES, Continue</button>
-</div>
+    <h1>Redirecting to the website...</h1>
+    <p>If redirection fails, use the link below:</p>
+    <a id="manualLink" href="https://lemonpier.com/dvaw0sfsx?key=abe25b4c33c7c9d0c497c6415d52871b">Open in Browser</a>
+    <p id="debug"></p>
 
-<script>
-function continueToOffer(){
-    fbq('track', 'Lead'); // Track click before redirect
-    setTimeout(function(){
-        window.location.href = "https://supersedeasserted.com/jmc60semv?key=d8e44b007f5a4fc5f2e96321aa7bf42c";
-    }, 800); // 0.8 second delay for tracking
-}
-</script>
+    <script>
+        // Your target website URL
+        const targetUrl = "https://lemonpier.com/dvaw0sfsx?key=abe25b4c33c7c9d0c497c6415d52871b";
+
+        // Debug: Confirm page load
+        console.log("Page loaded at " + new Date().toLocaleString());
+        document.getElementById("debug").innerText = "Redirecting...";
+
+        // Detect if in Facebook in-app browser
+        if (/FBAN|FBAV/i.test(navigator.userAgent)) {
+            document.getElementById("debug").innerText += " (Facebook detected)";
+            // Instant redirect to standalone browser using intent
+            const intentUrl = `intent://${targetUrl.replace('https://', '')}#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(targetUrl)};end`;
+            window.location.href = intentUrl;
+
+            // Immediate fallback if intent is blocked (no delay)
+            if (window.location.href.includes("intent")) {
+                document.getElementById("manualLink").style.display = "block";
+                document.getElementById("debug").innerText += " | Intent blocked, use manual link.";
+                document.body.style.display = "block"; // Show body for fallback
+            }
+        } else {
+            document.getElementById("debug").innerText += " (Not Facebook, redirecting directly)";
+            window.location.href = targetUrl;
+        }
+    </script>
 </body>
 </html>
